@@ -1,0 +1,374 @@
+// Originaly from: Brutal Pelican Theme for mamcmanus.com - © 2018 Matt McManus
+// Changes include: Alignment with UCC Brand Guidelines
+
+@import mixins
+@import reset
+
+
+// UCC Brand Guideline Colors
+$color-primary-dark:  #007ea9
+$color-primary-light: #c0e1ed
+
+$color-black: #000
+
+$color-secondary-red:    #da291c
+$color-secondary-yellow: #ffb81c
+$color-secondary-purple: #84329b
+$color-secondary-green:  #79a848
+$color-secondary-gray:   #75787b
+
+
+// UCC Brand Guideline Fonts
+$font-family-headline: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif
+$font-weight-headline: bold
+
+$font-family-tagline: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif
+$font-weight-tagline: normal
+
+$font-family-body-copy: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif
+
+
+// ancillary colors
+$color-white: #fff
+$color-border-gray: #808080
+
+
+body
+  font-family: $font-family-body-copy
+
+
+// main content container
+.page
+  line-height: 1.5
+  margin: auto
+  max-width: 42.5em // 680/16 = 42.5
+  text-align: center
+  @include breakpoint(medium)
+    padding-left: 30%
+  @include breakpoint(large)
+    padding-left: 20%
+  @include breakpoint(full)
+    padding-left: 0
+
+
+a
+  color: $color-primary-dark
+  text-decoration: underline
+
+  &:hover
+    color: $color-primary-light
+
+
+// navigation
+div#masthead
+  img
+    display: inline-block
+    height: auto
+    max-width: 20%
+    padding: 1em
+    @include breakpoint(small)
+      max-width: 10%
+    @include breakpoint(medium)
+      display: block
+      max-width: 60%
+      padding: 0
+    @include breakpoint(large)
+      max-width: 100%
+  @include breakpoint(medium)
+    max-width: 20%
+    padding-left: 4em
+    padding-top: 5%
+    position: fixed
+
+  nav#menu
+    -moz-transition: all 0.3s ease-out
+    -ms-transition: all 0.3s ease-out
+    -o-transition: all 0.3s ease-out
+    -webkit-transition: all 0.3s ease-out
+    clear: both
+    max-height: 0
+    overflow: hidden
+    transition: all 0.3s ease-out
+    @include breakpoint(medium)
+      max-height: none
+      padding-top: 15%
+
+      li
+        display: block
+        font-size: 1.2em
+        font-weight: 400
+
+    &#menu.active
+      max-height: 15em
+      padding: 2em 0
+
+    ul
+      border-top: 1px solid $color-border-gray
+      text-align: center
+      @include breakpoint(medium)
+        border: 0
+        text-align: left
+
+    li
+      a
+        border-bottom: 1px solid $color-border-gray
+        display: block
+        padding: .8em
+        text-decoration: none
+        @include breakpoint(medium)
+          border: 0
+
+  a#menu-link
+    display: block
+    float: right
+    font-size: 1.2em
+    line-height: 4em
+    padding: 1em
+    @include breakpoint(medium)
+      display: none
+
+
+footer
+  margin-bottom: 2em
+  margin-top: 2em
+
+  p
+    color: $color-secondary-gray
+
+
+.articles
+  padding: 1.5em
+  text-align: left
+
+  ol li
+    padding-bottom: 4em
+    padding-top: 1em
+  @include breakpoint(medium)
+    padding: 2em
+    padding-top: 4.25em
+
+  article
+    line-height: 2em
+
+    footer
+      margin-bottom: 0
+      margin-top: 0
+      padding-bottom: .25em
+
+    header
+      padding-bottom: 1em
+
+      a
+        text-decoration: none
+
+      h2
+        font-size: 2em
+        line-height: 1.3em
+
+    .summary
+      font-size: 1.125em
+      font-weight: 100
+      padding-bottom: 1em
+
+    .readmore
+      color: $color-primary-light
+      float: right
+      text-decoration: underline
+
+    .tags
+      list-style: none
+      margin:     0
+      overflow:   hidden
+      padding:    0
+
+      li
+        float: left
+        padding: 0
+
+
+.article
+  img
+    @include center-block
+    max-width: 50%
+
+  article
+    display: inline-block
+    line-height: 1.75
+    padding-top: 6em
+    text-align:  left
+    width:       85% // results in ~60-70 characters per line
+
+    // article published date
+    footer
+      margin-bottom: 0
+      margin-top:    0
+
+      p
+        text-align: center
+
+    // article header
+    header
+      .project-header-logo
+        padding-bottom: 4em
+
+      h2
+        font-size:      2em // 32/16 = 2
+        font-weight:    900
+        padding-bottom: 1em
+        text-align:     center
+
+    // article content styles
+    .content
+      font-size:   1.125em // 18/16 = 1.125
+      font-weight: 300
+
+      p
+        padding-bottom: 1.5em
+
+      // article headers
+      h2
+        font-size:      1.4em
+        font-weight:    900
+        padding-bottom: .75em
+        padding-top:    1.5em
+
+      h3
+        font-size:      1.2em
+        font-weight:    900
+        padding-bottom: .75em
+        padding-top:    1.5em
+
+      h4
+        font-size:      1em
+        font-weight:    900
+        padding-bottom: 1.25em
+        padding-top:    1em
+
+      // article lists
+      ul,
+      ol
+        line-height: 2
+        margin: 0 auto
+        padding-bottom: 2em
+        width: 85%
+
+      ul
+        list-style-type: square
+
+      ol
+        list-style-type: decimal
+
+      em // italics
+        font-size: .8em
+        font-style: italic
+
+      span.nv
+        color: #c65d09 // ToDo: create variable for color
+        font-weight: 900
+
+      span.article-masthead-icon
+        display: none
+
+      .embedded-tweet
+        margin-bottom: 2em
+        margin-top:    1em
+
+      .line-block
+        padding-bottom: 1.5em
+        font-style: italic
+
+      dl
+        .calendar-event-datetime
+          padding-top: 2em
+        .calendar-event-summary
+          font-weight: bold
+        dd
+          padding-left: 1em
+
+.back-to-top
+  margin-bottom: 6em
+  margin-top:    2em
+  padding-top:   2em
+  text-align: center
+
+  a
+    font-size: 1.5em // 24/16=1.5
+    font-weight: 900
+
+
+.tag
+  -webkit-transition: color 0.2s
+  background: $color-primary-light
+  border-radius: 3px
+  color: $color-black
+  display: inline-block
+  height: 2em
+  line-height: 2em
+  margin: 0 1em 1em 0
+  padding: 0 1em
+  position: relative
+  text-decoration: none
+
+  &:hover
+    background-color: $color-secondary-red
+    color: $color-white
+
+    &::after
+      border-left-color: $color-secondary-red
+
+.category-tag
+  color: $color-primary-light
+  font-style: italic
+  text-decoration: underline
+
+
+.paginator
+  font-size: 3em
+  text-align: center
+
+  span
+    font-size: .5em
+
+  a.previous
+    float: left
+
+  a.next
+    float: right
+
+
+// tags/categories
+.page-title
+  border-bottom: 2px solid $color-black
+  margin: 0 2em
+
+  h1
+    font-size:      3em
+    padding-bottom:  .75em
+    padding-top:    1.5em
+    text-align:     left
+
+.count
+  float: right
+
+
+// social icons
+.icon
+  display: inline-block
+  height:  2em
+  padding: 0 .5em
+  width:   2em
+
+
+.icons
+  margin: 2em auto
+
+
+.gravatar
+  border-radius: 50%
+
+
+img.emoji
+  display: inline
+  margin:  0
+  padding-right:   .5em
+  vertical-align: -.3em
