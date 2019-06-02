@@ -64,13 +64,14 @@ div#masthead
   img
     display: inline-block
     height: auto
-    max-width: 20%
+    max-width: 85%
+    max-height: 8ex
     padding: 1em
     @include breakpoint(small)
-      max-width: 10%
+      max-width: 65%
     @include breakpoint(medium)
       display: block
-      max-width: 60%
+      max-width: 100%
       padding: 0
     @include breakpoint(large)
       max-width: 100%
@@ -259,7 +260,6 @@ footer
         list-style-type: decimal
 
       em // italics
-        font-size: .8em
         font-style: italic
 
       span.nv
