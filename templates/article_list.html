@@ -21,6 +21,7 @@
                     </a>
                 </header>
                 <div class="summary">{{ article.description }} </div>
+                <div class="list-content">{{ article.list_content }} </div>
                 <div class="tags">
                     <ul class="tags">
                     {% for tag in article.tags %}
@@ -28,9 +29,11 @@
                     {% endfor %}
                     </ul>
                 </div>
+                {% if ((article.more_to_read|default("True") != "False")) %}
                 <a href="{{ SITEURL }}/{{ article.url }}">
                     <p class="readmore">Read more...</p>
                 </a>
+                {% endif %}
             </article>
         </li>
         {% endfor %}
